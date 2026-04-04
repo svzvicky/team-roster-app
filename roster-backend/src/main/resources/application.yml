@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: roster-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rosterdb
+    username: roster_user
+    password: roster_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    com.vignesh.roster.backend: DEBUG
