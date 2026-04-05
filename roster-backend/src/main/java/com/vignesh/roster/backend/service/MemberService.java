@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 @Slf4j
@@ -17,6 +19,11 @@ public class MemberService {
         memberRepository.save(member);
         log.debug("Member saved : {}", member);
         return member;
+    }
+
+    public List<Member> getAllMembers(){
+        log.debug("returned all members");
+        return memberRepository.findAll();
     }
 
 }

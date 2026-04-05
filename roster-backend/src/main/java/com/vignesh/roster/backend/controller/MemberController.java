@@ -5,6 +5,8 @@ import com.vignesh.roster.backend.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/members")
 @AllArgsConstructor
@@ -17,9 +19,9 @@ public class MemberController {
         return memberService.saveMember(member);
     }
 
-    @GetMapping(path = "/get")
-    public String testMethod(){
-        return "Welcome";
+    @GetMapping
+    public List<Member> getAllMembers(){
+        return memberService.getAllMembers();
     }
 
 }
